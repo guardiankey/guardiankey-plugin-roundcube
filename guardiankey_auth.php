@@ -28,11 +28,11 @@ class guardiankey_auth extends rcube_plugin
     function login($args)
     {
 		$rcmail = rcmail::get_instance();
-        $GKconfig = $rcmail->config->get('Gkconfig');
+        $GKconfig = $rcmail->config->get('GKconfig');
 		$GK = new guardiankey($GKconfig);
 		$rcmail2 =  json_decode(json_encode($rcmail->user->data));
         $username = $rcmail2->username;
-		$GKRet = $GK->checkaccess($username,'','1');
+		$GKRet = $GK->checkaccess($username,'','0');
 		$GKJSONReturn = @json_decode($GKRet);
         if ($GKJSONReturn->response == 'BLOCK' ) {
 			$RCMAIL = rcmail::get_instance(0, $GLOBALS['env']);

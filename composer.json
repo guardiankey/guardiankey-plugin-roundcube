@@ -1,0 +1,25 @@
+{
+    "name": "guardiankey/guardiankey_auth",
+    "type": "roundcube-plugin",
+    "description": "GuardianKey Auth Security for Roundcube",
+    "license": "GPLv3+",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "GuardianKey Cibersecurity",
+            "email": "roundcube@gmail.com",
+            "homepage": "https//guardiankey.io"
+            "role": "Lead"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://plugins.roundcube.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "roundcube/plugin-installer": ">=0.1.3"
+    }
+}

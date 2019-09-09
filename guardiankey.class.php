@@ -36,6 +36,7 @@ class guardiankey
     function __construct($GKconfig=null)
     {
         $this->check_extensions();
+
         if($GKconfig!=null)
             $this->GKconfig = $GKconfig;
     }
@@ -66,6 +67,8 @@ class guardiankey
 
     function create_message($username, $useremail="", $attempt = 0, $eventType="Authentication")
     {
+
+
         $GKconfig = $this->GKconfig;
         $keyb64 = $GKconfig['key'];
         $ivb64 = $GKconfig['iv'];
