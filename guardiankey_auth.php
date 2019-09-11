@@ -32,7 +32,12 @@ class guardiankey_auth extends rcube_plugin
 		$GK = new guardiankey($GKconfig);
 		$rcmail2 =  json_decode(json_encode($rcmail->user->data));
         $username = $rcmail2->username;
-		$GKRet = $GK->checkaccess($username,'','0');
+        if ($rcmail->config->get('username_is_email') == 'yes') {
+			$useremail = $username;
+		} else {
+			$useremail = '';
+		}
+		$GKRet = $GK->checkaccess($username,$useremail,'0');
 		$GKJSONReturn = @json_decode($GKRet);
         if ($GKJSONReturn->response == 'BLOCK' ) {
 			$RCMAIL = rcmail::get_instance(0, $GLOBALS['env']);
@@ -47,6 +52,12 @@ class guardiankey_auth extends rcube_plugin
         $GKconfig = $rcmail->config->get('Gkconfig');
 		$GK = new guardiankey($GKconfig);
         $username = $args['user'];
+         if ($rcmail->config->get('username_is_email') == 'yes') {
+			$useremail = $username;
+		} else {
+			$useremail = '';
+		}
+		$GKRet = $GK->checkaccess($username,$useremail,'1');
 		$GK->checkaccess($username,'','1');
 		return $args;
 	}
