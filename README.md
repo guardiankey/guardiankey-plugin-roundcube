@@ -6,6 +6,11 @@ More info about GuardianKey Auth: https://guardiankey.io
 
 You can install it in two ways:
 
+### Install via composer
+
+You following the instructions in https://plugins.roundcube.net/, and add in "require" section of composer.json:
+	"guardiankey/guardiankey_auth":"dev-master"
+
 ### Install directly
 
 Download and extract the plugin into folder "plugins", in Roundcube root files and rename folder of plugin:
@@ -19,9 +24,9 @@ Activate in "<roundcube_root>/config/config.inc.php", in variable "$config['plug
 
     $config['plugins'] = ['archive', 'zipdownload','guardiankey_auth'];
 
+## Configuration
+
 You need create a register in https://panel.guardiankey.io/auth/register. Then you navigate to https://panel.guardiankey.io, go to Setings->Authgroups->Edit/view(in My Authgroup)->Deploy information.
 Get informations and put in <roundcube_root>/plugins/guardiankey_auth/config.inc.php.
 
-### Install via composer
 
-Not disponible yet
