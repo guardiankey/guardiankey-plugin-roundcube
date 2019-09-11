@@ -32,8 +32,12 @@ class guardiankey_auth extends rcube_plugin
 		$GK = new guardiankey($GKconfig);
 		$rcmail2 =  json_decode(json_encode($rcmail->user->data));
         $username = $rcmail2->username;
-        if ($rcmail->config->get('username_is_email') == 'yes') {
-			$useremail = $username;
+        if ($rcmail->config->get('gk_username_is_email') == 'yes') {
+            if (!strpos($username, '@') !== false) {
+              $useremail = $username."@".$rcmail->config->get('gk_default_domain');
+            }else{
+			  $useremail = $username;
+            }
 		} else {
 			$useremail = '';
 		}
@@ -49,11 +53,15 @@ class guardiankey_auth extends rcube_plugin
   function login_failed($args)
     {
 		$rcmail = rcmail::get_instance();
-        $GKconfig = $rcmail->config->get('Gkconfig');
+        $GKconfig = $rcmail->config->get('GKconfig');
 		$GK = new guardiankey($GKconfig);
         $username = $args['user'];
-         if ($rcmail->config->get('username_is_email') == 'yes') {
-			$useremail = $username;
+         if ($rcmail->config->get('gk_username_is_email') == 'yes') {
+            if (!strpos($username, '@') !== false) {
+              $useremail = $username."@".$rcmail->config->get('gk_default_domain');
+            }else{
+			  $useremail = $username;
+            }
 		} else {
 			$useremail = '';
 		}

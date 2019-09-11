@@ -18,4 +18,5 @@ $rcmail_config['GKconfig'] =  array(
    If not, you need implement a webhook for receive notification:
      https://guardiankey.io/documentation/api/#receiving-via-webhook */
 
-$rcmail_config['username_is_email'] = 'yes'; // 'yes' or 'no'
+$rcmail_config['gk_username_is_email'] = 'yes'; // 'yes' or 'no'
+$rcmail_config['gk_default_domain'] = 'mydomain.com'; /* This will be appended to username if the username does not have char "@" and if username_is_email == yes */
