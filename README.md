@@ -1,6 +1,6 @@
 # Plugin GuardianKey Auth for Roundcube
 
-More info about GuardianKey Auth: https://guardiankey.io
+More info about GuardianKey Auth Security: https://guardiankey.io
 
 ## Instalation
 
