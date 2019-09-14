@@ -35,6 +35,8 @@ class guardiankey_auth extends rcube_plugin
         if ($rcmail->config->get('gk_username_is_email') == 'yes') {
             if (!strpos($username, '@') !== false) {
               $useremail = $username."@".$rcmail->config->get('gk_default_domain');
+              $username = $useremail;
+              
             }else{
 			  $useremail = $username;
             }
@@ -59,6 +61,8 @@ class guardiankey_auth extends rcube_plugin
          if ($rcmail->config->get('gk_username_is_email') == 'yes') {
             if (!strpos($username, '@') !== false) {
               $useremail = $username."@".$rcmail->config->get('gk_default_domain');
+              $username = $useremail;
+
             }else{
 			  $useremail = $username;
             }
