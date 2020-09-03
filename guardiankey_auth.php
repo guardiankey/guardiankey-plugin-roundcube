@@ -4,7 +4,7 @@
  * GuardianKey Auth Security
  *
  *
- * Please, register in https://panel.guardiankey.io and put deploy info in config.inc.php!
+ * Please register in https://panel.guardiankey.io and put deploy info in config.inc.php!
  *
  * @license GNU GPLv3+
  * @author GuardianKey Security

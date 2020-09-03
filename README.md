@@ -24,6 +24,7 @@ Activate in "<roundcube_root>/config/config.inc.php", in variable "$config['plug
 
     $config['plugins'] = ['archive', 'zipdownload','guardiankey_auth'];
 
+
 ## Configuration
 
 You need create a register in https://panel.guardiankey.io/auth/register. Then you navigate to https://panel.guardiankey.io, go to Setings->Authgroups->Edit/view(in My Authgroup)->Deploy information.
