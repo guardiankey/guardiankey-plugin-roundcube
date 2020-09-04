@@ -2,7 +2,7 @@
     "name": "guardiankey/guardiankey_auth",
     "type": "roundcube-plugin",
     "description": "GuardianKey Auth Security for Roundcube",
-    "license": "GPLv3+",
+    "license": "GPL-3.0-or-later",
     "version": "1.1",
     "authors": [
         {
